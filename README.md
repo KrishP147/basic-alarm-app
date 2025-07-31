@@ -60,7 +60,6 @@ alarm-app/
 ### Clock Tab
 - Displays the current time in 24-hour format
 - Updates every second
-- No leading zeros (e.g., 9:5:7 instead of 09:05:07)
 
 ### Alarm Tab
 1. **View Current Alarm**: Shows the currently set alarm time
@@ -75,10 +74,6 @@ alarm-app/
 - Alarm settings are automatically saved to browser localStorage
 - Settings persist even when you close and reopen the browser
 - If backend is available, settings are also saved there
-
-### Alarm Sound
-- The app tries to play `alarm.mp3` when the alarm triggers
-- If the MP3 file is not available, it falls back to a beep sound using Web Audio API
 - The alarm will continue until you click "Dismiss"
 
 ### Backend Integration
@@ -117,8 +112,6 @@ Edit `style.css` to modify the color scheme:
 - `#00ff88` - Clock color
 - `#ff6b6b` - Alarm color
 
-### Adding Features
-The modular JavaScript structure makes it easy to add new features:
 - Add new tabs by extending the `showTab()` function
 - Modify alarm logic in `checkAlarm()` and `triggerAlarm()`
 - Enhance styling in `style.css`
