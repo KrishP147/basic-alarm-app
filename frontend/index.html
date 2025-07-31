@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alarm Clock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="tabs">
+    <button onclick="showTab('clock')">Clock</button>
+    <button onclick="showTab('alarm')">Alarm</button>
+  </div>
+
+  <div id="clock-tab">
+    <h1 id="clock">Loading...</h1>
+  </div>
+
+  <div id="alarm-tab" style="display:none;">
+    <h2>Set Alarm</h2>
+    <div id="alarm-time">Loading...</div>
+    <button onclick="toggleEdit()">Edit</button>
+    <div id="edit-section" style="display:none;">
+      <button onclick="change('up', 'hour')">↑</button>
+      <span id="hour">6</span>
+      <button onclick="change('down', 'hour')">↓</button>
+      <br/>
+      <button onclick="change('up', 'minute')">↑</button>
+      <span id="minute">0</span>
+      <button onclick="change('down', 'minute')">↓</button>
+      <br/>
+      <button onclick="setAlarm()">Set</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
