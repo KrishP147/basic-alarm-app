@@ -1,4 +1,4 @@
-# Alarm Clock App
+# Basic Web Alarm
 
 A simple, elegant alarm clock application with a dark minimalist design. Features a real-time clock display and alarm functionality with persistence across browser sessions.
 

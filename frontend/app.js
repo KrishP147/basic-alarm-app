@@ -115,12 +115,12 @@ async function setAlarm() {
     });
 
     if (response.ok) {
-      alert('Alarm set successfully!');
+      alert('Basic Web Alarm set successfully!');
     } else {
-      alert('Failed to save alarm to backend, but alarm is set locally');
+      alert('Failed to save alarm to backend, but Basic Web Alarm is set locally');
     }
   } catch (error) {
-    alert('Backend not available, alarm set locally');
+    alert('Backend not available, Basic Web Alarm set locally');
   }
   
   // Save to localStorage as backup
