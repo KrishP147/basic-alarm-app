@@ -56,8 +56,8 @@ function updateClock() {
   const minutes = now.getMinutes();
   const seconds = now.getSeconds();
   
-  // Format without leading zeros for hours and seconds, but with leading zeros for minutes
-  const timeString = `${hours}:${minutes.toString().padStart(2, '0')}:${seconds}`;
+  // Format without leading zeros for hours, but with leading zeros for minutes and seconds
+  const timeString = `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   document.getElementById('clock').textContent = timeString;
 }
 
@@ -98,7 +98,7 @@ function change(direction, type) {
     } else if (direction === 'down') {
       currentAlarm.minute = (currentAlarm.minute - 1 + 60) % 60;
     }
-    document.getElementById('minute').textContent = currentAlarm.minute;
+    document.getElementById('minute').textContent = currentAlarm.minute.toString().padStart(2, '0');
   }
 }
 
