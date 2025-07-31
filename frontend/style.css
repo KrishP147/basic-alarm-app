@@ -1,15 +1,183 @@
 body {
   background: #121212;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   padding-top: 50px;
+  margin: 0;
+  min-height: 100vh;
 }
-button {
-  margin: 5px;
-  padding: 10px;
+
+#tabs {
+  margin-bottom: 30px;
+}
+
+#tabs button {
+  margin: 0 10px;
+  padding: 12px 24px;
   background: #333;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#tabs button:hover {
+  background: #555;
+}
+
+#tabs button.active {
+  background: #007acc;
+}
+
+#clock-tab, #alarm-tab {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#clock {
+  font-size: 4rem;
+  font-weight: 300;
+  margin: 40px 0;
+  color: #00ff88;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+#alarm-time {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #ff6b6b;
+}
+
+button {
+  margin: 8px;
+  padding: 12px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#edit-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+#edit-section button {
+  font-size: 18px;
+  padding: 8px 16px;
+  margin: 5px;
+}
+
+#hour, #minute {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ff88;
+  margin: 0 15px;
+  min-width: 40px;
+}
+
+/* Alarm Popup Styles */
+#alarm-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.alarm-popup-content {
+  background: #1e1e1e;
+  padding: 40px;
+  border-radius: 15px;
+  border: 2px solid #ff6b6b;
+  box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+  text-align: center;
+  animation: pulse 1s infinite;
+}
+
+.alarm-popup-content h2 {
+  color: #ff6b6b;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.alarm-popup-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.alarm-popup-content button {
+  background: #ff6b6b;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.alarm-popup-content button:hover {
+  background: #ff5252;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #clock {
+    font-size: 3rem;
+  }
+  
+  #alarm-time {
+    font-size: 2rem;
+  }
+  
+  .alarm-popup-content {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .alarm-popup-content h2 {
+    font-size: 2rem;
+  }
 }

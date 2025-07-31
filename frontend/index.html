@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alarm Clock</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="tabs">
-    <button onclick="showTab('clock')">Clock</button>
+    <button onclick="showTab('clock')" class="active">Clock</button>
     <button onclick="showTab('alarm')">Alarm</button>
   </div>
 
@@ -20,18 +21,26 @@
     <div id="alarm-time">Loading...</div>
     <button onclick="toggleEdit()">Edit</button>
     <div id="edit-section" style="display:none;">
-      <button onclick="change('up', 'hour')">↑</button>
-      <span id="hour">6</span>
-      <button onclick="change('down', 'hour')">↓</button>
-      <br/>
-      <button onclick="change('up', 'minute')">↑</button>
-      <span id="minute">0</span>
-      <button onclick="change('down', 'minute')">↓</button>
-      <br/>
-      <button onclick="setAlarm()">Set</button>
+      <div>
+        <button onclick="change('up', 'hour')">↑</button>
+        <span id="hour">6</span>
+        <button onclick="change('down', 'hour')">↓</button>
+      </div>
+      <div>
+        <button onclick="change('up', 'minute')">↑</button>
+        <span id="minute">0</span>
+        <button onclick="change('down', 'minute')">↓</button>
+      </div>
+      <div>
+        <button onclick="setAlarm()">Set</button>
+      </div>
     </div>
   </div>
 
   <script src="app.js"></script>
+  <script>
+    // Load alarm from localStorage when page loads
+    loadAlarmFromStorage();
+  </script>
 </body>
 </html>
